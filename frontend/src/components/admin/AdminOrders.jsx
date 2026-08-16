@@ -1,11 +1,11 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function AdminOrders() {
 
   const [orders, setOrders] = useState([]);
 
-  const fetchOrders = useCallback(async () => {
+  const fetchOrders = async () => {
 
     try {
 
@@ -28,11 +28,35 @@ function AdminOrders() {
 
     }
 
-  }, []);
+  };
 
   useEffect(() => {
-    fetchOrders();
-  }, [fetchOrders]);
+    let isMounted = true;
+    const getOrders = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const res = await axios.get(
+          "http://localhost:3000/admin/orders",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        if (isMounted) {
+          setOrders(res.data.orders);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getOrders();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   // ==============================
   // UPDATE STATUS
