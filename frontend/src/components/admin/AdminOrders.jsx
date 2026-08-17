@@ -12,7 +12,7 @@ function AdminOrders() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:3000/admin/orders",
+        "https://aaa-games.onrender.com/admin/orders",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -36,7 +36,7 @@ function AdminOrders() {
       try {
         const token = localStorage.getItem("token");
         const res = await axios.get(
-          "http://localhost:3000/admin/orders",
+          "https://aaa-games.onrender.com/admin/orders",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -69,7 +69,7 @@ function AdminOrders() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:3000/admin/orders/${id}`,
+        `https://aaa-games.onrender.com/admin/orders/${id}`,
         { status },
         {
           headers: {
@@ -99,7 +99,7 @@ function AdminOrders() {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `http://localhost:3000/admin/orders/${id}`,
+        `https://aaa-games.onrender.com/admin/orders/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

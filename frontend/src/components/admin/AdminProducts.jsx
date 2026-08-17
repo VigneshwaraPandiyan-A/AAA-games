@@ -7,7 +7,7 @@ function AdminProducts() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/products");
+      const res = await axios.get("https://aaa-games.onrender.com/products");
       setProducts(res.data.products);
     } catch (err) {
       console.log(err);
@@ -17,7 +17,7 @@ function AdminProducts() {
 useEffect(() => {
   async function fetchProducts() {
     try {
-      const res = await axios.get("http://localhost:3000/products");
+      const res = await axios.get("https://aaa-games.onrender.com/products");
       setProducts(res.data.products);
     } catch (error) {
       console.error(error);
@@ -34,7 +34,7 @@ useEffect(() => {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `http://localhost:3000/products/${id}`,
+        `https://aaa-games.onrender.com/products/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

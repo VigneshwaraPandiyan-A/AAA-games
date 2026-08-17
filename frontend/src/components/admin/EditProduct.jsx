@@ -21,7 +21,7 @@ const [product, setProduct] = useState({
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/products/${id}`
+          `https://aaa-games.onrender.com/products/${id}`
         );
 
         const fetched = response.data.product || {};
@@ -69,7 +69,7 @@ const [product, setProduct] = useState({
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:3000/products/${id}`,
+        `https://aaa-games.onrender.com/products/${id}`,
         product,
         {
           headers: {

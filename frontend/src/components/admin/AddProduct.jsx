@@ -38,7 +38,7 @@ const [product, setProduct] = useState({
       const token = localStorage.getItem("token");
 
       await axios.post(
-        "http://localhost:3000/create",
+        "https://aaa-games.onrender.com/create",
         product,
         {
           headers: {
