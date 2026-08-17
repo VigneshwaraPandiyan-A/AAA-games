@@ -50,8 +50,8 @@ function Checkout() {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.post(
-        "http://localhost:3000/orders",
+      const res = await axios.post(
+        "https://aaa-games.onrender.com/orders",
         {
           items: cart,
           customer,
@@ -65,11 +65,15 @@ function Checkout() {
 
       alert("🎉 Order Placed Successfully");
 
-      dispatch(checkout());
+dispatch(checkout());
 
-      navigate("/order-success", {
-        state: { order: response.data.order },
-      });
+navigate("/order-success",{
+
+state:{
+order:res.data.order
+}
+
+});
 
     } catch (error) {
       console.log(error);

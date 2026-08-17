@@ -24,7 +24,7 @@ function MyOrders() {
       }
 
       const response = await axios.get(
-        "http://localhost:3000/orders",
+        "https://aaa-games.onrender.com/orders",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ function MyOrders() {
         }
 
         const response = await axios.get(
-          "http://localhost:3000/orders",
+          "https://aaa-games.onrender.com/orders",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -126,7 +126,7 @@ function MyOrders() {
     console.log("Deleting Order:", orderId);
 
     const response = await axios.delete(
-      `http://localhost:3000/orders/my/${orderId}`,
+      `https://aaa-games.onrender.com/orders/my/${orderId}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,

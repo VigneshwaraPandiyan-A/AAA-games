@@ -18,7 +18,7 @@ function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/products");
+        const response = await axios.get("https://aaa-games.onrender.com/products");
         setGames(response.data.products);
       } catch (error) {
         console.log(error);

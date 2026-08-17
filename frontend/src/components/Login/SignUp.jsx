@@ -23,7 +23,7 @@ const SignUp = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/register",
+        "https://aaa-games.onrender.com/register",
         formData
       );
 
