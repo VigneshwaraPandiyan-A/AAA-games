@@ -119,9 +119,9 @@ function AdminOrders() {
 
   return (
 
-    <div className="min-h-screen bg-black text-white p-10">
+    <div className="min-h-screen bg-black text-white p-4 sm:p-10">
 
-      <h1 className="text-4xl font-bold mb-8">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-6 sm:mb-8 text-center sm:text-left">
         Customer Orders
       </h1>
 
@@ -131,7 +131,9 @@ function AdminOrders() {
 
         (
 
-          <h2>No Orders Found</h2>
+          <div className="bg-zinc-900 border border-purple-800/40 rounded-xl p-8 text-center">
+            <h2 className="text-xl">No Orders Found</h2>
+          </div>
 
         )
 
@@ -143,54 +145,44 @@ function AdminOrders() {
 
             <div
               key={order._id}
-              className="bg-zinc-900 border border-purple-600 rounded-xl p-6 mb-10"
+              className="bg-zinc-900 border border-purple-600 rounded-xl p-4 sm:p-6 mb-8 shadow-lg"
             >
 
               {/* Customer */}
 
-              <div className="mb-5">
+              <div className="mb-5 border-b border-gray-800 pb-4">
 
-                <h2 className="text-2xl font-bold text-purple-400">
+                <h2 className="text-xl sm:text-2xl font-bold text-purple-400 mb-2">
                   Customer Details
                 </h2>
 
-                <p>
-                  <b>Name :</b> {order.customer?.name}
-                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 text-sm sm:text-base">
+                  <p>
+                    <b>Name :</b> {order.customer?.name}
+                  </p>
 
-                <p>
-                  <b>Email :</b> {order.customer?.email}
-                </p>
+                  <p className="break-all">
+                    <b>Email :</b> {order.customer?.email}
+                  </p>
 
-                <p>
-                  <b>Phone :</b> {order.customer?.phone}
-                </p>
+                  <p>
+                    <b>Phone :</b> {order.customer?.phone}
+                  </p>
 
-                <p>
-                  <b>Address :</b> {order.customer?.address}
-                </p>
+                  <p>
+                    <b>Payment :</b> {order.customer?.paymentMethod}
+                  </p>
 
-                <p>
-                  <b>City :</b> {order.customer?.city}
-                </p>
-
-                <p>
-                  <b>State :</b> {order.customer?.state}
-                </p>
-
-                <p>
-                  <b>Pincode :</b> {order.customer?.pincode}
-                </p>
-
-                <p>
-                  <b>Payment :</b> {order.customer?.paymentMethod}
-                </p>
+                  <p className="sm:col-span-2">
+                    <b>Address :</b> {order.customer?.address}, {order.customer?.city}, {order.customer?.state} - {order.customer?.pincode}
+                  </p>
+                </div>
 
               </div>
 
               {/* Products */}
 
-              <h2 className="text-2xl font-bold text-purple-400 mb-5">
+              <h2 className="text-xl sm:text-2xl font-bold text-purple-400 mb-4">
                 Ordered Items
               </h2>
 
@@ -213,36 +205,36 @@ function AdminOrders() {
                   return (
                     <div
                       key={item._id}
-                      className="flex gap-5 border-b border-gray-700 py-4"
+                      className="flex flex-col sm:flex-row gap-4 border-b border-gray-800 py-4 items-start sm:items-center"
                     >
                       <img
                         src={image}
-                        className="w-32 h-32 rounded object-cover"
+                        className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover shrink-0"
                         alt={title}
                       />
 
-                      <div>
-                        <h2 className="text-2xl font-bold">
+                      <div className="text-sm sm:text-base">
+                        <h2 className="text-lg sm:text-2xl font-bold">
                           {title}
                         </h2>
 
-                        <p>
+                        <p className="text-gray-300">
                           Publisher : {publisher}
                         </p>
 
-                        <p>
+                        <p className="text-gray-300">
                           Category : {category}
                         </p>
 
-                        <p>
+                        <p className="text-gray-300">
                           Platform : {platform}
                         </p>
 
-                        <p>
+                        <p className="text-gray-300">
                           Qty : {item.quantity}
                         </p>
 
-                        <p>
+                        <p className="text-purple-400 font-bold">
                           Price : ₹{item.price}
                         </p>
                       </div>
@@ -253,23 +245,21 @@ function AdminOrders() {
 
               {/* Footer */}
 
-              <div className="mt-6 flex justify-between items-center">
+              <div className="mt-6 flex flex-col sm:flex-row justify-between sm:items-center gap-4 pt-2">
 
                 <div>
 
-                  <h2 className="text-3xl font-bold">
-                    Total :
-                    ₹{order.totalAmount}
+                  <h2 className="text-2xl sm:text-3xl font-bold text-purple-400">
+                    Total : ₹{order.totalAmount}
                   </h2>
 
-                  <p>
-                    Order Id :
-                    {order._id}
+                  <p className="text-gray-400 text-xs sm:text-sm break-all mt-1">
+                    Order ID : #{order._id}
                   </p>
 
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-3 items-center">
 
                   <select
                     value={order.status}
@@ -279,7 +269,7 @@ function AdminOrders() {
                         e.target.value
                       )
                     }
-                    className="bg-black border border-purple-600 rounded px-4 py-2"
+                    className="bg-black border border-purple-600 rounded px-4 py-2 text-sm sm:text-base text-white"
                   >
 
                     <option>Pending</option>
@@ -291,7 +281,7 @@ function AdminOrders() {
 
                   <button
                     onClick={()=>deleteOrder(order._id)}
-                    className="bg-red-600 px-5 rounded"
+                    className="bg-red-600 hover:bg-red-700 font-semibold px-5 py-2 rounded text-sm sm:text-base transition"
                   >
                     Delete
                   </button>

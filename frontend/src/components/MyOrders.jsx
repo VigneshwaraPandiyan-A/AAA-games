@@ -296,16 +296,16 @@ function MyOrders() {
 
             {/* ORDER HEADER */}
 
-            <div className="grid md:grid-cols-4 gap-5 border-b border-gray-700 pb-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 border-b border-gray-700 pb-6">
 
               {/* ORDER ID */}
 
               <div>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-xs sm:text-sm">
                   Order ID
                 </p>
 
-                <p className="text-white font-semibold text-sm break-all mt-1">
+                <p className="text-white font-semibold text-xs sm:text-sm break-all mt-1">
                   #{order._id}
                 </p>
               </div>
@@ -313,11 +313,11 @@ function MyOrders() {
               {/* DATE */}
 
               <div>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-xs sm:text-sm">
                   Order Date
                 </p>
 
-                <p className="text-white mt-1">
+                <p className="text-white text-xs sm:text-sm mt-1">
                   {order.createdAt
                     ? new Date(
                         order.createdAt
@@ -329,11 +329,11 @@ function MyOrders() {
               {/* TOTAL */}
 
               <div>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-xs sm:text-sm">
                   Total Amount
                 </p>
 
-                <p className="text-purple-400 font-bold text-xl mt-1">
+                <p className="text-purple-400 font-bold text-lg sm:text-xl mt-1">
                   ₹
                   {Number(
                     order.totalAmount || 0
@@ -344,7 +344,7 @@ function MyOrders() {
               {/* STATUS */}
 
               <div>
-                <p className="text-gray-500 text-sm mb-2">
+                <p className="text-gray-500 text-xs sm:text-sm mb-2">
                   Order Status
                 </p>
 
@@ -577,12 +577,12 @@ function OrderStatus({ status }) {
 function OrderTracking({ status }) {
   if (status === "Cancelled") {
     return (
-      <div className="bg-red-900/20 border border-red-700 rounded-xl p-5">
-        <p className="text-red-400 font-bold text-lg">
+      <div className="bg-red-900/20 border border-red-700 rounded-xl p-4 sm:p-5">
+        <p className="text-red-400 font-bold text-base sm:text-lg">
           ❌ Order Cancelled
         </p>
 
-        <p className="text-gray-400 mt-1">
+        <p className="text-gray-400 text-xs sm:text-sm mt-1">
           This order has been cancelled.
         </p>
       </div>
@@ -620,7 +620,7 @@ function OrderTracking({ status }) {
         >
 
           <div
-            className={`w-12 h-12 mx-auto rounded-full flex items-center justify-center text-xl ${
+            className={`w-10 h-10 sm:w-12 sm:h-12 mx-auto rounded-full flex items-center justify-center text-base sm:text-xl ${
               step.active
                 ? "bg-purple-600"
                 : "bg-zinc-800"
@@ -630,7 +630,7 @@ function OrderTracking({ status }) {
           </div>
 
           <p
-            className={`text-sm mt-2 ${
+            className={`text-xs sm:text-sm mt-2 ${
               step.active
                 ? "text-purple-400 font-bold"
                 : "text-gray-600"

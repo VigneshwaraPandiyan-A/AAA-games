@@ -69,45 +69,45 @@ function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-black via-purple-950 to-zinc-950 text-white py-16 px-6">
+    <div className="min-h-screen bg-linear-to-br from-black via-purple-950 to-zinc-950 text-white py-8 px-4 sm:py-16 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
-        <div className="text-center mb-16">
-          <span className="bg-purple-600/30 text-purple-400 border border-purple-500/50 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase">
+        <div className="text-center mb-10 sm:mb-16">
+          <span className="bg-purple-600/30 text-purple-400 border border-purple-500/50 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide uppercase">
             Contact Support
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold mt-6 bg-linear-to-r from-white via-purple-300 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mt-4 sm:mt-6 bg-linear-to-r from-white via-purple-300 to-purple-500 bg-clip-text text-transparent">
             Get in Touch with HQ
           </h1>
 
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-4">
+          <p className="text-gray-400 text-sm sm:text-lg max-w-2xl mx-auto mt-4">
             Have questions about an order, game compatibility, or store partnerships? Our gamer support squad is here 24/7.
           </p>
         </div>
 
         {/* INFO CARDS */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 mb-10 sm:mb-16">
           {contactInfo.map((info, idx) => (
             <div
               key={idx}
-              className="bg-zinc-900/90 border border-purple-800/40 p-8 rounded-2xl text-center shadow-lg hover:border-purple-500 transition duration-300"
+              className="bg-zinc-900/90 border border-purple-800/40 p-6 sm:p-8 rounded-2xl text-center shadow-lg hover:border-purple-500 transition duration-300"
             >
-              <div className="text-4xl mb-4">{info.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{info.icon}</div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5 sm:mb-2">
                 {info.title}
               </h3>
-              <p className="text-purple-400 font-semibold">{info.detail}</p>
-              <p className="text-gray-400 text-sm mt-1">{info.subText}</p>
+              <p className="text-purple-400 font-semibold text-sm sm:text-base break-all">{info.detail}</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">{info.subText}</p>
             </div>
           ))}
         </div>
 
         {/* FORM AND FAQ SECTION */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* CONTACT FORM */}
-          <div className="bg-zinc-900 border border-purple-700/60 rounded-3xl p-8 md:p-10 shadow-2xl">
-            <h2 className="text-3xl font-bold text-white mb-6">
+          <div className="bg-zinc-900 border border-purple-700/60 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">
               Send Us a Message
             </h2>
 

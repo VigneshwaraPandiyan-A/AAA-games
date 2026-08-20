@@ -88,21 +88,20 @@ const [product, setProduct] = useState({
   };
 
   return (
-    <div className="min-h-screen bg-black flex justify-center items-center p-10">
+    <div className="min-h-screen bg-black flex justify-center items-center py-6 sm:py-10 px-4">
 
       <form
         onSubmit={handleUpdate}
-        className="bg-gray-900 border border-purple-700 rounded-xl p-8 w-full max-w-3xl"
+        className="bg-gray-900 border border-purple-700 rounded-xl p-5 sm:p-8 w-full max-w-3xl"
       >
 
-        <h1 className="text-4xl font-bold text-yellow-500 text-center mb-8">
+        <h1 className="text-2xl sm:text-4xl font-bold text-yellow-500 text-center mb-6 sm:mb-8">
           Edit Product
         </h1>
 
-                  <label className="text-white font-semibold">
-            Title
-          </label>
-
+        <label className="text-white font-semibold">
+          Title
+        </label>
 
         <input
           type="text"
@@ -110,24 +109,24 @@ const [product, setProduct] = useState({
           placeholder="Title"
           value={product.title}
           onChange={handleChange}
-          className="w-full p-3 mb-4 rounded bg-gray-800 text-white"
+          className="w-full p-3 mb-4 rounded bg-gray-800 text-white border border-gray-700 outline-none"
         />
 
-                          <label className="text-white font-semibold">
-            Description
-          </label>
+        <label className="text-white font-semibold">
+          Description
+        </label>
 
         <textarea
           name="description"
           placeholder="Description"
           value={product.description}
           onChange={handleChange}
-          className="w-full p-3 mb-4 rounded bg-gray-800 text-white"
+          className="w-full p-3 mb-4 rounded bg-gray-800 text-white border border-gray-700 outline-none"
         />
 
-                          <label className="text-white font-semibold">
-            Image
-          </label>
+        <label className="text-white font-semibold">
+          Image
+        </label>
 
         <input
           type="text"
@@ -135,12 +134,12 @@ const [product, setProduct] = useState({
           placeholder="Image URL"
           value={product.image}
           onChange={handleChange}
-          className="w-full p-3 mb-4 rounded bg-gray-800 text-white"
+          className="w-full p-3 mb-4 rounded bg-gray-800 text-white border border-gray-700 outline-none"
         />
 
-                          <label className="text-white font-semibold">
-            Publisher
-          </label>
+        <label className="text-white font-semibold">
+          Publisher
+        </label>
 
         <input
           type="text"
@@ -148,10 +147,10 @@ const [product, setProduct] = useState({
           placeholder="Publisher"
           value={product.publisher}
           onChange={handleChange}
-          className="w-full p-3 mb-4 rounded bg-gray-800 text-white"
+          className="w-full p-3 mb-4 rounded bg-gray-800 text-white border border-gray-700 outline-none"
         />
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                             <label className="text-white font-semibold">
             Price

@@ -51,16 +51,16 @@ function About() {
           At AAA Games, we are passionate gamers dedicated to bringing you the latest blockbusters, indie gems, and timeless classics at unbeatable prices with zero wait time.
         </p>
 
-        <div className="flex justify-center gap-4 mt-8">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mt-8 max-w-xs sm:max-w-none mx-auto">
           <Link
             to="/"
-            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3.5 rounded-xl font-bold transition shadow-lg hover:shadow-purple-500/30"
+            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3.5 rounded-xl font-bold transition shadow-lg hover:shadow-purple-500/30 text-center"
           >
             Explore Games
           </Link>
           <Link
             to="/contact"
-            className="border border-purple-500 text-purple-300 hover:bg-purple-500/10 px-8 py-3.5 rounded-xl font-bold transition"
+            className="border border-purple-500 text-purple-300 hover:bg-purple-500/10 px-8 py-3.5 rounded-xl font-bold transition text-center"
           >
             Contact Us
           </Link>

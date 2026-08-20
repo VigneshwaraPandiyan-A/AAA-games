@@ -86,13 +86,13 @@ order:res.data.order
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-violet-950 via-black to-violet-950 py-10">
+    <div className="min-h-screen bg-linear-to-br from-violet-950 via-black to-violet-950 py-6 sm:py-10 px-4">
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10">
 
-        <div className="bg-zinc-900 p-8 rounded-xl border border-purple-700">
+        <div className="bg-zinc-900 p-5 sm:p-8 rounded-xl border border-purple-700">
 
-          <h2 className="text-3xl text-white font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl text-white font-bold mb-6">
             Customer Details
           </h2>
 
@@ -102,7 +102,7 @@ order:res.data.order
             placeholder="Full Name"
             value={customer.name}
             onChange={handleChange}
-            className="w-full p-3 mb-4 rounded bg-black text-white"
+            className="w-full p-3 mb-4 rounded bg-black text-white border border-gray-800 focus:border-purple-500 outline-none"
           />
 
           <input
@@ -111,7 +111,7 @@ order:res.data.order
             placeholder="Phone Number"
             value={customer.phone}
             onChange={handleChange}
-            className="w-full p-3 mb-4 rounded bg-black text-white"
+            className="w-full p-3 mb-4 rounded bg-black text-white border border-gray-800 focus:border-purple-500 outline-none"
           />
 
           <input
@@ -120,7 +120,7 @@ order:res.data.order
             placeholder="Email"
             value={customer.email}
             onChange={handleChange}
-            className="w-full p-3 mb-4 rounded bg-black text-white"
+            className="w-full p-3 mb-4 rounded bg-black text-white border border-gray-800 focus:border-purple-500 outline-none"
           />
 
           <textarea
@@ -128,26 +128,28 @@ order:res.data.order
             placeholder="Address"
             value={customer.address}
             onChange={handleChange}
-            className="w-full p-3 mb-4 rounded bg-black text-white"
+            className="w-full p-3 mb-4 rounded bg-black text-white border border-gray-800 focus:border-purple-500 outline-none"
           />
 
-          <input
-            type="text"
-            name="city"
-            placeholder="City"
-            value={customer.city}
-            onChange={handleChange}
-            className="w-full p-3 mb-4 rounded bg-black text-white"
-          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <input
+              type="text"
+              name="city"
+              placeholder="City"
+              value={customer.city}
+              onChange={handleChange}
+              className="w-full p-3 rounded bg-black text-white border border-gray-800 focus:border-purple-500 outline-none"
+            />
 
-          <input
-            type="text"
-            name="state"
-            placeholder="State"
-            value={customer.state}
-            onChange={handleChange}
-            className="w-full p-3 mb-4 rounded bg-black text-white"
-          />
+            <input
+              type="text"
+              name="state"
+              placeholder="State"
+              value={customer.state}
+              onChange={handleChange}
+              className="w-full p-3 rounded bg-black text-white border border-gray-800 focus:border-purple-500 outline-none"
+            />
+          </div>
 
           <input
             type="text"
@@ -155,14 +157,14 @@ order:res.data.order
             placeholder="Pincode"
             value={customer.pincode}
             onChange={handleChange}
-            className="w-full p-3 mb-4 rounded bg-black text-white"
+            className="w-full p-3 mb-4 rounded bg-black text-white border border-gray-800 focus:border-purple-500 outline-none"
           />
 
           <select
             name="paymentMethod"
             value={customer.paymentMethod}
             onChange={handleChange}
-            className="w-full p-3 rounded bg-black text-white"
+            className="w-full p-3 rounded bg-black text-white border border-gray-800 focus:border-purple-500 outline-none"
           >
             <option>Cash On Delivery</option>
             <option>UPI</option>
@@ -173,59 +175,64 @@ order:res.data.order
 
         </div>
 
-        <div className="bg-zinc-900 p-8 rounded-xl border border-purple-700">
+        <div className="bg-zinc-900 p-5 sm:p-8 rounded-xl border border-purple-700 flex flex-col justify-between">
 
-          <h2 className="text-3xl text-white font-bold mb-6">
-            Order Summary
-          </h2>
+          <div>
+            <h2 className="text-2xl sm:text-3xl text-white font-bold mb-6">
+              Order Summary
+            </h2>
 
-          {cart.map((item) => (
+            {cart.map((item) => (
 
-            <div
-              key={item._id}
-              className="flex justify-between mb-5 border-b border-gray-700 pb-4"
-            >
+              <div
+                key={item._id}
+                className="flex items-center justify-between mb-4 border-b border-gray-800 pb-4 gap-3"
+              >
 
-              <div className="flex gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
 
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-20 h-20 rounded object-cover"
-                />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded object-cover shrink-0"
+                  />
 
-                <div>
+                  <div>
 
-                  <h3 className="text-white font-bold">
-                    {item.title}
-                  </h3>
+                    <h3 className="text-white font-bold text-sm sm:text-base line-clamp-1">
+                      {item.title}
+                    </h3>
 
-                  <p className="text-gray-400">
-                    Qty : {item.quantity}
-                  </p>
+                    <p className="text-gray-400 text-xs sm:text-sm mt-1">
+                      Qty : {item.quantity}
+                    </p>
+
+                  </div>
 
                 </div>
 
+                <h3 className="text-purple-400 font-bold text-sm sm:text-base shrink-0">
+                  ₹{(item.price * item.quantity).toLocaleString("en-IN")}
+                </h3>
+
               </div>
 
-              <h3 className="text-purple-400 font-bold">
-                ₹{item.price * item.quantity}
-              </h3>
+            ))}
+          </div>
 
-            </div>
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mt-6 pt-4 border-t border-gray-800 flex justify-between items-center">
+              <span>Total :</span>
+              <span className="text-purple-400">₹{total.toLocaleString("en-IN")}</span>
+            </h2>
 
-          ))}
-
-          <h2 className="text-3xl font-bold text-white mt-8">
-            Total : ₹{total.toLocaleString("en-IN")}
-          </h2>
-
-          <button
-            onClick={placeOrder}
-            className="w-full mt-8 bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-lg text-lg font-bold"
-          >
-            Confirm Order
-          </button>
+            <button
+              onClick={placeOrder}
+              className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white py-3.5 sm:py-4 rounded-lg text-base sm:text-lg font-bold transition shadow-lg hover:shadow-purple-500/30"
+            >
+              Confirm Order
+            </button>
+          </div>
 
         </div>
 

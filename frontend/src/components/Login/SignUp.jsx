@@ -36,9 +36,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-purple-950 flex justify-center items-center">
+    <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-purple-950 flex justify-center items-center px-4 py-8">
 
-      <div className="bg-gray-900 border border-purple-700 rounded-2xl shadow-2xl p-10 w-96">
+      <div className="bg-gray-900 border border-purple-700 rounded-2xl shadow-2xl p-6 sm:p-10 w-full max-w-md">
 
         <h1 className="text-4xl font-bold text-center text-purple-500">
           Join AAA Games

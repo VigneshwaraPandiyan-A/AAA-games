@@ -65,13 +65,13 @@ setProduct({
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-purple-950 flex justify-center items-center py-10">
+    <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-purple-950 flex justify-center items-center py-6 sm:py-10 px-4">
 
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-900 border border-purple-600 rounded-xl p-8 w-full max-w-2xl"
+        className="bg-gray-900 border border-purple-600 rounded-xl p-5 sm:p-8 w-full max-w-2xl"
       >
-        <h1 className="text-4xl font-bold text-center text-green-500 mb-8">
+        <h1 className="text-2xl sm:text-4xl font-bold text-center text-green-500 mb-6 sm:mb-8">
           Add New Game
         </h1>
 
@@ -82,7 +82,7 @@ setProduct({
           value={product.title}
           onChange={handleChange}
           required
-          className="w-full mb-4 p-3 rounded bg-gray-800 text-white"
+          className="w-full mb-4 p-3 rounded bg-gray-800 text-white border border-gray-700 outline-none"
         />
 
         <textarea
@@ -91,7 +91,7 @@ setProduct({
           value={product.description}
           onChange={handleChange}
           required
-          className="w-full mb-4 p-3 rounded bg-gray-800 text-white"
+          className="w-full mb-4 p-3 rounded bg-gray-800 text-white border border-gray-700 outline-none"
         />
 
         <input
@@ -101,7 +101,7 @@ setProduct({
           value={product.publisher}
           onChange={handleChange}
           required
-          className="w-full mb-4 p-3 rounded bg-gray-800 text-white"
+          className="w-full mb-4 p-3 rounded bg-gray-800 text-white border border-gray-700 outline-none"
         />
 
         <input
@@ -111,10 +111,10 @@ setProduct({
           value={product.image}
           onChange={handleChange}
           required
-          className="w-full mb-4 p-3 rounded bg-gray-800 text-white"
+          className="w-full mb-4 p-3 rounded bg-gray-800 text-white border border-gray-700 outline-none"
         />
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
 
           <input
